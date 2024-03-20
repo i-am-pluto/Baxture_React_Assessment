@@ -144,7 +144,7 @@ const UserCard: React.FC<UserCardProps> = ({ user, onDelete }) => {
           align="center"
           justify="center"
         >
-          {/* Implement follow and delete buttons */}
+          {/*Starting*/}
           {following ? (
             <Button
               variant="outline"
