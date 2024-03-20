@@ -26,7 +26,6 @@ const ParentComponent = () => {
 
   const handleDeleteUser = async (userId: number) => {
     try {
-      // Update the users state by filtering out the deleted user
       setUsers(users.filter((user) => user.id !== userId));
     } catch (error) {
       console.error("Error deleting user:", error);
@@ -35,14 +34,16 @@ const ParentComponent = () => {
 
   return (
     <Flex pe={4} ps={4} me={8} ms={8}>
-      <Grid gutter="lg">
+      <Grid  style={{width:'100%'}}>
         {users.map((user) => (
           <Grid.Col key={user.id} span={{
             base: 12, // 1 per row on sm
             sm: 6,   // 2 per row on md
             md: 6,   // 2 per row on md
             lg: 3,   // 4 per row on lg
-          }}>
+            
+          }}
+          >
           <UserCard user={user} onDelete={handleDeleteUser} />
         </Grid.Col>
         ))}
